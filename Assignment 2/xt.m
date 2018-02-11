@@ -1,4 +1,4 @@
-function yolo = eFunc (x)
+function yolo = xt (x)
 yolo = y(1, length(x));
 
 for i = 1 : length(x)

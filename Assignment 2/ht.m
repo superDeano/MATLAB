@@ -1,4 +1,4 @@
-function lol = eFunc (x)
+function lol = ht (x)
 lol = y(1, length(x));
 
 for i = 1 : length(x)
