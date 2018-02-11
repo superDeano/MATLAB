@@ -1,5 +1,5 @@
 function omg = unitStep(x)
-omg = y(1, length(x));
+omg = zeros(1, length(x));
 
 for i = 1 : length(x)
     if x(i) >= 0
