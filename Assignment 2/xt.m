@@ -1,3 +1,7 @@
+%The excitation input
+%The array yolo does not have a fix quantity so the function will be able
+%to calculate the values using the inputs
+
 function yolo = xt (x)
 yolo = zeros(1, length(x));
 

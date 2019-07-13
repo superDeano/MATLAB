@@ -1,3 +1,6 @@
+%The unit step function
+%For a certain range of value, it will calculate the values
+
 function omg = unitStep(x)
 omg = zeros(1, length(x));
 
