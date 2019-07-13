@@ -3,6 +3,6 @@
 
 function out = square_of_function(function_name, x_value)
 
-result = function_name(x_value).^(2)
+out = function_name(x_value).^(2)
 
 end
