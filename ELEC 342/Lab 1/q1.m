@@ -10,8 +10,8 @@ area = 4 * pi .* radiuses .^2;
 volume = 4/3 * pi .* radiuses .^3;
 
 % Square
-surfAreaSquare = 6.*radiuses.^2;
-volumeSquare = radiuses.^3;
+surfAreaSquare = 6 .* radiuses .^2;
+volumeSquare = radiuses .^3;
 
 subplot(1,2,1);
 plot (radiuses, area);
