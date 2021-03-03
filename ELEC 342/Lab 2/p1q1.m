@@ -2,15 +2,15 @@
 % 40061194
 
 clc;
-clear all;
+clear;
 
-% subplot(1,2,1);
-n = [0 : 9];
+subplot(1,2,1);
+n = (0 : 9);
 x = n;
 y = x.^2;
-% stem (n,x)
-% subplot(1,2,2);
-% stem (n, y)
+stem (n,x)
+subplot(1,2,2);
+stem (n, y)
 
 energyX = 0;
 energyY = 0;
