@@ -57,10 +57,7 @@ title('y4')
 testLinearTimeInv(y3, y4, linearity)
 
 
-
 % Part b) i)
-
-
 n = [0:10];
 x1 = sin((2 * pi/10).* n);
 x2 = cos((2 * pi/10).* n);
