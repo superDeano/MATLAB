@@ -35,4 +35,4 @@ y2 = mySystem(n - 2);
 subplot(row, col , 2)
 stem(x1, y2);
 title('shifted input')
-testLinearTimeInv(y1, y2, timeInvariance);
+testLinearTimeInv(y1(1), y2(3), timeInvariance);
