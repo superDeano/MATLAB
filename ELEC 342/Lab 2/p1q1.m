@@ -9,9 +9,10 @@ n = (0 : 9);
 x = n;
 y = x.^2;
 stem (n,x)
+title('energy x[n]')
 subplot(1,2,2);
 stem (n, y)
-
+title('energy y[n]')
 energyX = 0;
 energyY = 0;
 
