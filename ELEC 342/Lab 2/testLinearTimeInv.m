@@ -1,4 +1,4 @@
-function linear = testLinearity(y ,y2, type)
+function linear = testLinearTimeInv(y ,y2, type)
 
     linear = (y == y2);
     if type == 0
