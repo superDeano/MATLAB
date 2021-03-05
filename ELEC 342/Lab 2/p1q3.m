@@ -1,10 +1,11 @@
 % Dean 
 
 clc;
-clear all;
+clear;
 
 rows = 4;
 col = 2;
+disp('Starting part 1 question 3')
 
 % PART A)
 n = [-10:10];
