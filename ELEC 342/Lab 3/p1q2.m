@@ -2,26 +2,25 @@
 
 clc;
 clear;
-row = 1;
-column = 2;
-% frequencyStep = 1;
-frequencyStep = 1/3.2;
-frequencyStep2 = 1/3.2;
-
+close all;
+row = 4;
+column = 1;
 % Defining interval for n
 n = (-10 : 10);
 
-% Defining signal
+% frequencyStep = 1;
+frequencyStep = 2* pi/length(n);
+frequencyStep2 = 2* pi/(21);
 
-% xOfN = cos((2*pi/10) * n);
+% Defining signal
 xOfN = zeros(1, length(n));
 xOfN(9:13) = 1;
 subplot(row, column, 1);
 stem(n, xOfN);
-
+title('Original signal')
 % Defining frequency interval
-frequencies = (0: frequencyStep : 2*pi);
-frequencies2 = (0: frequencyStep2 : 2*pi);
+frequencies = (-2 *pi * 0: frequencyStep : 2*pi*20/21);
+% frequenciesForMatlabResult = (0: 2* pi / length(xOfN) : (length(xOfN) -1)/ length(xOfN) * 2*pi);
 
 % Preallocated array
 result = zeros(1, length(frequencies));
@@ -36,18 +35,24 @@ for w = 1 : length(frequencies)
    
 end
 
-hold;
-stem(frequencies, result)
+% hold;
+subplot(row, column, 2);
+plot(frequencies, abs(result))
+title('fourier transform with for loop')
 
-resultMatlab = fft(xOfN)
-stem(frequencies, resultMatlab);
+resultMatlab = fft(xOfN);
+subplot(row, column, 3);
+plot(frequencies, abs(resultMatlab));
+title('fourier transform with for matlab function')
+% hold off;
 
 % Question 3
-subplot(row, column, 2);
+subplot(row, column, 4);
 og = ifft(resultMatlab);
-stem(n, xOfN);
-hold
-stem(n, og);
+plot(n, xOfN);
+title('result of inverse fourier transform')
+% hold
+plot(n, og);
 
 
 
