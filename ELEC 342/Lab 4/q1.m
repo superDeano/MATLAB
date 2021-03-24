@@ -38,39 +38,38 @@ for loop = 1 : 5
     
 end
 
-% Question 1 B)
-clc;
-clear;
-close all;
+resp = input("Enter 'c' to continue to Question 1 B)\n", 's');
+if resp == 'c'
+    % Question 1 B)
+    clc;
+    clear;
+    close all;
 
-resp = input("Enter 'q' to quit\n", 's');
-if resp == 'q'
-    exit()
-end
 
-resp = input("Enter the sampling rate\n");
-samplingRate = floor(resp);
-N = getNumberOfSamples(samplingRate);
-
-for loop = 1 : 5 
-    % Getting the sampling rate
-    windowSize = input("Please input the window size\n");
-    if windowSize == 0 
-        break
-    end
-
-    % Determine N based upon sampling rate
+    resp = input("Enter the sampling rate\n");
+    samplingRate = floor(resp);
     N = getNumberOfSamples(samplingRate);
-    n = windowSize * N;
-    w = -(window_size) * pi : 0.05 : pi*(window_size) ;
 
-    range = 0:n - 1;
-    xOfN = sin(2*pi/N * range);
-    
-    resultFT = fourierTransform(xOfN, range);
-    figure()
-    stem(range, xOfN);
-    hold;
-    plot(w, abs(resultFT));
-    
+    for loop = 1 : 5 
+        % Getting the sampling rate
+        windowSize = input("Please input the window size\n");
+        if windowSize == 0 
+            break
+        end
+
+        % Determine N based upon sampling rate
+        N = getNumberOfSamples(samplingRate);
+        n = windowSize * N;
+        w = -(window_size) * pi : 0.05 : pi*(window_size) ;
+
+        range = 0:n - 1;
+        xOfN = sin(2*pi/N * range);
+
+        resultFT = fourierTransform(xOfN, range);
+        figure()
+        stem(range, xOfN);
+        hold;
+        plot(w, abs(resultFT));
+
+    end
 end
