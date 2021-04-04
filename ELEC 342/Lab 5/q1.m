@@ -15,8 +15,8 @@ t= (0: 1/fs : 0.1);
 
 xOfT = sin(100*t) + sin(2000*t) + sin(6000*t); 
 
-% order = 8;
-order = 4;
+order = 8;
+% order = 4;
 
 %% Butterworth
 H_Butterwoth = designfilt('bandpassiir', 'FilterOrder', ...

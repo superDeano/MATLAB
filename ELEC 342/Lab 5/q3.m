@@ -17,7 +17,7 @@ range = 1: numberOfSamples;
 [y, freqAudio] = audioread('ELEC_364_lab_5_Audio_S.wav');
 zeroToOne = y(1: 100000);
 subplot(row, column, inc);
-% plot(range, y);
+
 zeroTo1Range = (0: 1/ (length(zeroToOne) -1): 1);
 
 plot(zeroTo1Range, zeroToOne);

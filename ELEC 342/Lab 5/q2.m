@@ -11,7 +11,7 @@ forTwoSeconds = 2;
 global index;
 index = 1;
 
-%%
+%% Part A)
 fs = 8192;
 t = (1 : 1/fs : 3);
 x1 = sin(2*pi*200*t);
@@ -39,7 +39,7 @@ play(playX);
 
 pause(forTwoSeconds);
 
-%% 
+%% Part B)
 H = designfilt('bandstopiir','PassbandFrequency1', 250, 'StopbandFrequency1', ...
     300, 'StopbandFrequency2', 380,'PassbandFrequency2', 430, ...
     'PassbandRipple1', 1, 'StopbandAttenuation',60, ...
