@@ -31,14 +31,13 @@ for loop = 1 : 5
     xOfN = 0.5*sin(2*pi/N*range) + 0.33* sin(4*pi/N*range);
     
     resultFT = fourierTransform(xOfN, range);
-    figure()
     subplot(1, 3, 1);
     stem(range, xOfN);
+    title('Sampled Signal');
     subplot(1, 3, 2);
     plot(w, abs(resultFT));
     title('Regular Plot');
     subplot(1,3,3);
-%     w2 =  -pi : 2*pi/(2* numberOfPeriods * stepSize) : pi ;
     polarplot(w, abs(resultFT));
     title('Polar Plot')
     

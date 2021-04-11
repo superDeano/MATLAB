@@ -13,6 +13,7 @@ stepSize = input("Please input the step size\n");
 
 range = (-numberOfPeriods : numberOfPeriods);
 frequencyStep = 2 * pi / length(range);
+% frequencyStep = stepSize;
 
 global w;
 w = -numberOfPeriods*pi:frequencyStep:numberOfPeriods*pi;
@@ -27,49 +28,51 @@ for loop = 1 : 5
     % Determine N based upon sampling rate
     N = getNumberOfSamples(samplingRate);
     n = numberOfPeriods * N;
-    range = 0:n;
+    range = 0:2*n -1;
     xOfN = sin(2*pi/N * range);
     
     resultFT = fourierTransform(xOfN, range);
-    figure()
+    subplot(2, 1, 1)
     stem(range, xOfN);
-    hold;
+    title('Sampled signal');
+    subplot(2, 1, 2)
     plot(w, abs(resultFT));
+    title('Fourier Transform');
     
 end
 
 resp = input("Enter 'c' to continue to Question 1 B)\n", 's');
 if resp == 'c'
-    % Question 1 B)
+    Question 1 B)
     clc;
     clear;
     close all;
-
-
+    
     resp = input("Enter the sampling rate\n");
     samplingRate = floor(resp);
+    % Determine N based upon sampling rate
     N = getNumberOfSamples(samplingRate);
 
     for loop = 1 : 5 
-        % Getting the sampling rate
+        % Getting the window size from user
         windowSize = input("Please input the window size\n");
         if windowSize == 0 
             break
         end
+      
 
-        % Determine N based upon sampling rate
-        N = getNumberOfSamples(samplingRate);
-        n = windowSize * N;
-        w = -(window_size) * pi : 0.05 : pi*(window_size) ;
+        w = -(windowSize) * pi : 1 : pi*(windowSize) ;
 
-        range = 0:n - 1;
+        range = 0:2*N - 1;
         xOfN = sin(2*pi/N * range);
 
         resultFT = fourierTransform(xOfN, range);
-        figure()
+        subplot(2, 1, 1)
         stem(range, xOfN);
-        hold;
+        title('Sampled signal');
+        subplot(2, 1, 2)
         plot(w, abs(resultFT));
+        title('Fourier Transform');
 
     end
 end
