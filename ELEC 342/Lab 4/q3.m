@@ -4,6 +4,7 @@ clc;
 clear;
 close all;
 
+%% Part a)
 frequencyAudio = 22050;
 numberOfSamples = 44100;
 numberOfBitsPerSample = 16;
@@ -11,14 +12,16 @@ range = 1: numberOfSamples;
 
 [original, frequencyAudio] = audioread('Original.wav', [1,numberOfSamples]);
 figure();
+subplot(1,2,1);
 plot(range, original);
 title('Original Wave');
 
 [distorted, frequencyAudio] = audioread('Distorted.wav', [1, numberOfSamples]);
-figure();
+subplot(1,2,2);
 plot(range, distorted);
 title('Distorted Wave');
 
+%% Part c)
 MSE = 0;
 for i = range
     MSE = MSE + (original(i)-distorted(i)).^2;
